@@ -1,5 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { meals } from "../../mock-data/cards";
+
+export type Category =
+  | "salads"
+  | "italian"
+  | "starters"
+  | "breakfast"
+  | "desserts"
+  | "asian"
+  | "softDrink"
+  | "coffee";
 export type Card = {
   id: string;
   name: string;
@@ -7,15 +17,7 @@ export type Card = {
   price: number;
   vegan: boolean;
   vegetarian: boolean;
-  category:
-    | "salads"
-    | "italian"
-    | "starters"
-    | "breakfast"
-    | "desserts"
-    | "asian"
-    | "softDrink"
-    | "coffee";
+  category: Category;
 };
 
 export type CardsState = {
@@ -60,9 +62,9 @@ export const cardsSlice = createSlice({
 //2) actions
 //3) reducer
 
-//one way to export the actions: 
+//one way to export the actions:
 //export const cardActions = cardsSlice.actions;
 
 //nicer way to export the actions:
-export const {addCard, deleteCard, editCard} = cardsSlice.actions;
+export const { addCard, deleteCard, editCard } = cardsSlice.actions;
 export default cardsSlice.reducer;
