@@ -21,6 +21,31 @@ function App() {
         </button>
       </div>
 
+      <Modal
+        isOpen={open}
+        onRequestClose={() => {
+          setOpen(false);
+        }}
+        contentLabel="Example Modal"
+      >
+        <h2>Hello</h2>
+        <button
+          onClick={() => {
+            setOpen(false);
+          }}
+        >
+          close
+        </button>
+        <div>I am a modal</div>
+        <form>
+          <input />
+          <button>tab navigation</button>
+          <button>stays</button>
+          <button>inside</button>
+          <button>the modal</button>
+        </form>
+      </Modal>
+
       <Routes>
         <Route path="/" element={<CardList />} />
         <Route path="/cards" element={<CardList />} />
