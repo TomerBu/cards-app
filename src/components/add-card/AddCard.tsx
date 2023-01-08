@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Modal from "react-modal";
-import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { v4 } from "uuid";
 import { useAppDispatch } from "../../app/hooks";
@@ -106,8 +105,7 @@ const AddCard = () => {
             };
             //dispatch addCard(card)
             dispatch(addCard(card));
-            Swal.fire("success", "", "success");
-            closeModal();
+            Swal.fire("success", "", "success").then((e) => closeModal());
           }}
         >
           Add Card:
@@ -118,3 +116,5 @@ const AddCard = () => {
 };
 
 export default AddCard;
+
+// create read update delete
