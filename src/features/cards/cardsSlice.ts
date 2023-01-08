@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { meals } from "../../mock-data/cards";
 export type Card = {
   id: string;
   name: string;
@@ -22,7 +23,7 @@ export type CardsState = {
 };
 
 const initialState: CardsState = {
-  cards: [],
+  cards: meals,
 };
 
 //name: cards, values: cards: Card[]
